@@ -9,5 +9,6 @@ namespace SwiftyNames.V1._0.Persistants
     public interface IRepository
     {
         IList<NewsPapersPrice> GetNewsPaperTable();
+        IList<Nationality> GetNational();
     }
 }

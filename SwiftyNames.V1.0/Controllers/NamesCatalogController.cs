@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 
 namespace SwiftyNames.V1._0.Controllers
@@ -62,16 +63,162 @@ namespace SwiftyNames.V1._0.Controllers
 
             return View(model);
         }
-
-
-
         public ActionResult ChangeOfNamey()
         {
             return View();
         }
+        private IEnumerable<SelectListItem> Nationalitems (NameChanger model)
+        {
+            List<Nationality> national = new List<Nationality>();
+            national = context.Nationalities.Where(x => x.Adjective != null && x.Abbreviation!="-").ToList();
+            var  list = from s in national
+                        select new SelectListItem
+                        {
+                            Selected = s.NationalityId.ToString() == model.CountryId.ToString(),
+                            Text = s.Adjective,
+                            Value = s.NationalityId.ToString()
+                        };
+            model.Nationality = "Nigerian";
+            return list;
+        }
+        private IEnumerable<SelectListItem> NewsPaper(NameChanger model)
+        {
+            List<NewsPapersPrice> dailies = new List<NewsPapersPrice>();
+            dailies = context.NewsPapersPrices.ToList();
+            var list = from s in dailies
+                       select new SelectListItem
+                       {
+                           Selected = s.Id.ToString() == model.NewsId.ToString(),
+                           Text = s.NewsPaper,
+                           Value = s.Id.ToString()
+                       };
+           
+            return list;
+        }
+        private IEnumerable<SelectListItem> countryItems(NameChanger model)
+        {
+            List<Nationality> national = new List<Nationality>();
+            national = context.Nationalities.Where(x => x.Adjective != null && x.Adjective!="-").ToList();
+            var list = from s in national
+                       select new SelectListItem
+                       {
+                           Selected = s.NationalityId.ToString() == model.CountryId.ToString(),
+                           Text = s.Country,
+                           Value = s.NationalityId.ToString()
+                       };
+            model.country = "Nigeria";
+            return list;
+        }
+        private IEnumerable<SelectListItem> HomeCountry(NameChanger model)
+        {
+            List<Nationality> national = new List<Nationality>();
+            national = context.Nationalities.Where(x =>x.Country=="Nigeria").ToList();
+            var list = from s in national
+                       select new SelectListItem
+                       {
+                           Selected = s.NationalityId.ToString() == model.CountryId.ToString(),
+                           Text = s.Country,
+                           Value = s.NationalityId.ToString()
+                       };
+           
+            return list;
+        }
+        private IEnumerable<SelectListItem> StatesList(NameChanger model)
+        {
+            List<State> national = new List<State>();
+            national = context.States.ToList();
+            var list = from s in national
+                       select new SelectListItem
+                       {
+                           Selected = s.Id.ToString() == model.stateId.ToString(),
+                           Text = s.StateName,
+                           Value = s.Id.ToString()
+                       };
+           
+            return list;
+        }
+
+        private IEnumerable<SelectListItem> NoticeList(NameChanger model)
+        {
+            List<State> national = new List<State>();
+            national = context.States.ToList();
+            var list = from s in national
+                       select new SelectListItem
+                       {
+                           Selected = s.Id.ToString() == model.stateId.ToString(),
+                           Text = s.StateName,
+                           Value = s.Id.ToString()
+                       };
+
+            return list;
+        }
+        
+        private List<SelectListItem> bindComboDate()
+        {
+            var listItems = new List<SelectListItem>
+         {
+          new SelectListItem { Text = "During the week", Value="1" },
+          new SelectListItem { Text = "Weekends", Value="2" },
+        
+          };
+            return listItems;
+        }
+
+        private List<SelectListItem> bindComboHear()
+        {
+            var listItems = new List<SelectListItem>
+         {
+          new SelectListItem { Text = "Radio", Value="1" },
+          new SelectListItem { Text = "NewsPaper", Value="2" },
+          new SelectListItem { Text = "Facebook", Value="3" },
+          new SelectListItem { Text = "Blog", Value="4" },
+          new SelectListItem { Text = "LinkedIn", Value="5" },
+          new SelectListItem { Text = "Youtube", Value="5" },
+          new SelectListItem { Text = "Others", Value="6" },
+        
+          };
+            return listItems;
+        }
+        private List<SelectListItem> bindCombo()
+        {
+            var listItems = new List<SelectListItem>
+         {
+          new SelectListItem { Text = "No", Value="0" },
+          new SelectListItem { Text = "Yes", Value="1" },
+        
+          };
+            return listItems;
+        }
+      
         public ActionResult ChangeOfNameForm()
         {
-            return View();
+            NameChanger model = new NameChanger();
+            List<Nationality> national = new List<Nationality>();
+            national = context.Nationalities.Where(x=>x.Adjective!=null).ToList();
+            model.NAtionalities = Nationalitems(model);
+
+            model.countries = countryItems(model);
+            model.Homecountries = HomeCountry(model);
+            model.StateList = StatesList(model);
+            model.NewsPapers = NewsPaper(model);
+
+            model.AreyoumarriedList = bindCombo();
+            model.LegalpuporseList = bindCombo();
+            model.ConvictedList = bindCombo();
+            model.DivoiceList = bindCombo();
+            model.Hearabout = bindComboHear();
+            
+
+            List<NoticeLevel> notices = new List<NoticeLevel>();
+            notices = context.NoticeLevels.ToList();
+            model.NoticeLevel = new MultiSelectList(notices, "Id", "NoticeName", notices.Select(x => x.Id));
+
+            List<Reason> Reasons = new List<Reason>();
+            Reasons = context.Reasons.ToList();
+            model.Reasons = new MultiSelectList(Reasons, "Id", "NameChangeReasons", Reasons.Select(x => x.Id));
+
+            model.PreferedDate = bindComboDate();
+            return View(model);
         }
     }
 }

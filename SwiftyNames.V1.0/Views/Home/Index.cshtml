@@ -2,15 +2,74 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Name Changer</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="~/NamesCatalog/CatalogView" class="btn btn-primary btn-lg">Change your Name &raquo;</a></p>
+
+<div class="main-header col-md-8">
+    <div id="menu-wrapper">
+        <div class="">
+            <div class="logo-wrapper ">
+                <div class="menu-style">
+                    <ul class="nav navbar-nav nav-style">
+                        <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                        <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                        <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+  
+<div id="slider">
+    
+        <div>
+            <img src="~/images/sl1.jpg" class="img-responsive">
+            @*<h1>The jQuery slider that just slides.</h1>
+            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
+
+            <a class="btn" href="#download">Download</a>*@
+        </div>
+
+    <div >
+        <img src="~/images/sl2.jpg" class="img-responsive">
+        @*<h1>Fluid, flexible, fantastically minimal.</h1>
+        <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+        <a class="btn" href="#download">Download</a>*@
+    </div>
+
+    <div >
+        <img src="~/images/sl3.jpg" class="img-responsive">
+        @*<h1>Open-source.</h1>
+        <p>Everything to do with Unslider is hosted on GitHub.</p>
+
+        <a class="btn" href="//github.com/idiot/unslider">Contribute</a>*@
+    </div>
+
+    <div>
+        <img src="~/images/sl4.jpg" class="img-responsive">
+        @*<h1>Open-source.</h1>
+            <p>Everything to do with Unslider is hosted on GitHub.</p>
+
+            <a class="btn" href="//github.com/idiot/unslider">Contribute</a>*@
+    </div>
+        @*<li style="background-image: url('~/images/shop.jpg');">
+            <h1>Uh, that’s about it.</h1>
+            <p>I just wanted to show you another slide.</p>
+
+            <a class="btn" href="#download">Download</a>
+        </li>*@
+ 
+</div></div>
+
+<div class="row top-space" >
+    <div class="col-md-4 top-style">
+        <span class="icon-box bg-color-brown set-icon flat">
+            <i class="fa fa-book"></i>
+        </span>
         <p>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
@@ -18,14 +77,91 @@
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
+    <div class="col-md-4 top-style">
+        <span class="icon-box bg-color-blue set-icon flat">
+            <i class="fa fa-gavel"></i>
+        </span>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
+    <div class="col-md-4 top-style">
+        <span class="icon-box bg-color-green set-icon flat">
+            <i class="fa fa-book"></i>
+        </span>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<div class="row top-space">
+    <div class="col-md-4">
+        <div class="box no-border bg-darkred info">
+            <div class="">
+              
+                <div class="inner text-center">
+                    <p><i class="fa fa-comments-o icon-bg "></i></p>
+
+                </div>
+                    <p ><h4 class=" my-text">Do you need a change of name?</h4></p>
+                    <p><h1 class="my-text"><strong>Check out here!</strong></h1></p>
+                   <p class="my-text">With a with Nigerian Express Name Changer, you can quickly and
+                 easily change your name without going through the stress of looking
+                 for media houses we do all that for you and begin your new life with your
+                 new identity. </p>
+                   
+               <div class="btn btn-block btn-lg btn-default" style="color:#f37936"> Go!</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="box no-border bg-grey info image">
+            <div class="">
+
+                <div class="inner text-center">
+                   
+
+                </div>
+                <p><h2 class=" my-text">Reasons for change of name</h2></p>
+               
+                <p class="my-text">
+                    What are the most popular reasons people change their names?
+                     Well, it could be for just about any reason or for no reason
+                     at all—and it's perfectly legal unless it is for fraudulent
+                     or deceptive purposes or will result in the financial loss 
+                    of a third party or the commission of an illegal act. 
+                </p>
+                <p >
+                    <ul class="my-text">
+                        <li>
+                            Dislike Current Name
+                        </li>
+                        <li>
+                            Changing Name following divorce
+                        </li>
+                        <li>
+                            Wife taking Husdand's name upon Marriage
+                        </li>
+                        <li>
+                            Couples combining or hyphenating Surname to form a new one
+                        </li>
+                        <li>
+                            Religious Reasons
+                        </li>
+                    </ul>
+                </p>
+                <div class="btn btn-group btn-lg btn-primary" style="color:#ffffff"> Go!</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year - Name Changer</p>
+    </footer>

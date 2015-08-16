@@ -65,28 +65,28 @@ namespace SwiftyNames.V1._0.Models
     public class RegisterViewModel
     {
 
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
-        public string LastName { get; set; }
-        [Required]
-        public string OtherName { get; set; }
-        [Required]
-        public string Gender { get; set; }
-        [Required]
-        public string Address { get; set; }
-        [Required]
-        public string Country { get; set; }
+        //[Required]
+        //public string FirstName { get; set; }
+        //[Required]
+        //public string LastName { get; set; }
+        //[Required]
+        //public string OtherName { get; set; }
+        //[Required]
+        //public string Gender { get; set; }
+        //[Required]
+        //public string Address { get; set; }
+        //[Required]
+        //public string Country { get; set; }
 
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Phone  Number")]
-        public string PhoneNumber { get; set; }
+        //[Required]
+        //[EmailAddress]
+        //[Display(Name = "Phone  Number")]
+        //public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -99,10 +99,10 @@ namespace SwiftyNames.V1._0.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
-        public string PreferedNewsPaper{ get; set; }
-        [Required]
-        public string HowyouHear { get; set; }
+        //[Required]
+        //public string PreferedNewsPaper{ get; set; }
+        //[Required]
+        //public string HowyouHear { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -26,6 +26,11 @@ namespace SwiftyNames.V1._0
         }
     
         public virtual DbSet<Delivery> Deliveries { get; set; }
+        public virtual DbSet<Form> Forms { get; set; }
+        public virtual DbSet<Nationality> Nationalities { get; set; }
         public virtual DbSet<NewsPapersPrice> NewsPapersPrices { get; set; }
+        public virtual DbSet<Reason> Reasons { get; set; }
+        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<NoticeLevel> NoticeLevels { get; set; }
     }
 }

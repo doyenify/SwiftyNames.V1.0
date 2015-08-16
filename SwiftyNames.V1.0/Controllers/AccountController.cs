@@ -141,7 +141,7 @@ namespace SwiftyNames.V1._0.Controllers
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
-        {
+         {
             return View();
         }
 
@@ -154,7 +154,7 @@ namespace SwiftyNames.V1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,PhoneNumber=model.PhoneNumber };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

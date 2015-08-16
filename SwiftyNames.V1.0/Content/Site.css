@@ -1,8 +1,16 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+    
 }
+body.bg{
+    background: url('/images/pattern-2.png') repeat;
 
+}
+stretch{
+    width:100%;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -22,3 +30,180 @@ select,
 textarea {
     max-width: 280px;
 }
+#s3slider {
+    width: 1000px; /* important to be same as image width */
+    height: 260px; /* important to be same as image height */
+    position: relative; /* important */
+    overflow: hidden; /* important */
+}
+ 
+#s3sliderContent {
+    width: 1000px; /* important to be same as image width or wider */
+    position: absolute; /* important */
+    top: 0; /* important */
+    margin-left: 0; /* important */
+}
+ 
+.s3sliderImage {
+    float: left; /* important */
+    position: relative; /* important */
+    /*display: none;*/ /* important */
+}
+ 
+.s3sliderImage span {
+    position: absolute; /* important */
+    left: 0;
+    font: 10px/15px Arial, Helvetica, sans-serif;
+    padding: 10px 13px;
+    width: 374px;
+    background-color: #000;
+    filter: alpha(opacity=70); /* here you can set the opacity of box with text */
+    -moz-opacity: 0.7; /* here you can set the opacity of box with text */
+    -khtml-opacity: 0.7; /* here you can set the opacity of box with text */
+    opacity: 0.7; /* here you can set the opacity of box with text */
+    color: #fff;
+    display: none; /* important */
+    top: 0; /*
+        if you put top: 0;  -> the box with text will be shown 
+                                at the top of the image
+        if you put bottom: 0;  -> the box with text will be shown 
+                                at the bottom of the image
+    */
+}
+ 
+.clear {
+    clear: both;
+}
+
+
+
+
+
+#slider{
+    /*position:relative;*/
+    /*width:960px;*/
+    height: 406px;
+    
+
+}
+#slider > div{
+    position:absolute;
+   /*width:1170px;
+    height: 406px;*/
+}
+
+ .icon-box{
+    display:block;
+    float: left;
+    margin: 10px 15px 10px 0;
+    width: 80px;
+    height:80px;
+    line-height:80px;
+    vertical-align:middle;
+    text-align:center;
+    font-size:40px;
+}
+
+  .set-icon{
+    border-radius:50px;
+}
+ .set-icon:hover{
+     border-radius:1%;
+ }
+
+  
+  .bg-color-green{
+    background-color:#00CE6F;
+    color:#fff;
+}
+  .bg-color-orange{
+    background-color:#ff6a00;
+    color:#fff;
+}
+  .bg-color-blue{
+    background-color:#00aff0;
+    color:#fff;
+}
+   .bg-color-brown{
+    background-color:#f37936;
+    color:#fff;
+}
+   .bg-color-yellow{
+       background-color:#B94A00;
+   }
+
+   .top-space{
+       margin-top:30px;
+   }
+
+   .main-header{
+       position: absolute;
+       /*width:100%;*/
+       margin:0 auto;
+       z-index: 99;
+       top: 94px;
+       transition: all 150ms ease-in-out;
+   }
+   #menu-wrapper{
+       /*border-left:10px solid #f37936;*/
+       background-color: rgba(255,255,255, 0.8);
+       height:80px;
+       /*overflow: hidden;*/
+   }
+   .logo-wrapper{
+       background: url('/images/LOGO1.png') no-repeat;
+       height:80px;
+   }
+   .menu-style{
+       padding-left:130px;
+   }
+   .nav-custom{
+
+   }
+   .box{
+	padding: 15px;
+	margin-bottom: 30px;
+	background: #fff;
+	border: 1px solid #D5DAE0;
+	position: relative;
+}
+
+   .info .icon-bg{
+ 
+	/*padding-left:20%;*/
+	font-size: 150px;
+	color: #fff;
+
+}
+   .bg-darkred 				{background-color: #f37936;}
+   .bg-grey{
+       background-color:#3f3f3f;
+   }
+
+   .my-text{
+       color:#ffffff;
+       font-family:Arial;
+   }
+
+   .image{
+     
+       background: #2e4d42 url('/images/coupl.png') no-repeat ;
+       background-size:contain;
+       -webkit-backface-size:contain;
+       height:430px;
+     
+   }
+
+   @media (max-width: 767px) {
+    .image {
+       height:auto;
+    }
+}
+   .top-style{
+       font-family:Arial;
+   }
+   .nav-style a{
+       margin-top:15px;
+       color:#444444;
+       font-family:Arial;
+   }

@@ -13,7 +13,7 @@
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
    
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
@@ -54,19 +54,19 @@
     <div class="col-md-10">
         @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
     </div>
-</div>
+</div>*@
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
-    <div class="form-group">
+    @*<div class="form-group">
         @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
         </div>
-    </div>
+    </div>*@
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -84,7 +84,7 @@
     //    [Required]
     //    public string HowyouHear { get; set; }
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(m => m.PreferedNewsPaper, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.PasswordFor(m => m.PreferedNewsPaper, new { @class = "form-control" })
@@ -96,7 +96,7 @@
         <div class="col-md-10">
             @Html.PasswordFor(m => m.HowyouHear, new { @class = "form-control" })
         </div>
-    </div>
+    </div>*@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />

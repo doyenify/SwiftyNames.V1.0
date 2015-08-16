@@ -14,9 +14,16 @@ namespace SwiftyNames.V1._0
     
     public partial class Delivery
     {
+        public Delivery()
+        {
+            this.Forms = new HashSet<Form>();
+        }
+    
         public int Id { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public System.DateTime DateOrdered { get; set; }
+    
+        public virtual ICollection<Form> Forms { get; set; }
     }
 }

@@ -17,5 +17,14 @@ namespace SwiftyNames.V1._0.Persistants
         {
             return context.NewsPapersPrices.ToList();
         }
+
+        public IList<Nationality> GetNational()
+        {
+
+            return context.Nationalities.Where(x=>x.Adjective!=null && x.Person!=null).ToList();
+        }
+
+
+       
     }
 }

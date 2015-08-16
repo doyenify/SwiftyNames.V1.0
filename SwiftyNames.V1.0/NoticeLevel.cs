@@ -12,17 +12,9 @@ namespace SwiftyNames.V1._0
     using System;
     using System.Collections.Generic;
     
-    public partial class NewsPapersPrice
+    public partial class NoticeLevel
     {
-        public NewsPapersPrice()
-        {
-            this.Forms = new HashSet<Form>();
-        }
-    
         public int Id { get; set; }
-        public string NewsPaper { get; set; }
-        public decimal Price { get; set; }
-    
-        public virtual ICollection<Form> Forms { get; set; }
+        public string NoticeName { get; set; }
     }
 }
